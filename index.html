@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌦️ Weather App</h1>
+    <p id="datetime"></p>
+
+    <div class="layout">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+
+            <div class="search-box">
+                <input type="text" id="city" placeholder="Enter city name">
+                <button class="getw" onclick="getWeather()">Get Weather</button>
+            </div>
+
+            <div class="actions">
+                <button class="speakBtn" onclick="speakWeather()">🔊 Speak</button>
+                <button onclick="toggleDarkMode()" class="darkBtn">🌙 Dark Mode</button>
+
+                <button class="locBtn" onclick="getLocationWeather()">📍 Location</button>
+                <button class="unitBtn" onclick="toggleUnit()">🌡️ °C/°F</button>
+                <button class="satBtn" onclick="setSatellite()">🛰️ Satellite</button>
+            </div>
+
+            <div class="distance-box">
+                <input type="text" id="source" placeholder="Enter source place">
+                <input type="text" id="destination" placeholder="Enter destination place">
+                <button id="getDistanceBtn" onclick="calculateDistance()">Get Distance</button>
+
+                <p id="distanceResult"></p>
+            </div>
+
+            <p id="loading" style="display:none;">⏳ Loading...</p>
+
+            <div id="result"></div>
+
+            <h4>Recent Searches</h4>
+            <button onclick="clearRecentCities()">❌ Clear Recent</button>
+            <ul id="recent"></ul>
+
+        </div>
+
+        <!-- RIGHT SIDE (MAP) -->
+        <div class="right">
+            <h4 id="mapTitle">Map View</h4>
+
+            <!-- SETTINGS BUTTON -->
+            <button id="settingsBtn" onclick="toggleSettings()">⚙️</button>
+
+            <!-- SETTINGS MENU -->
+            <div id="settingsMenu" class="settings-menu">
+                <button onclick="toggleLanguageMenu()">🌐 Language</button>
+            </div>
+
+            <!-- LANGUAGE MENU -->
+            <div id="languageMenu" class="language-menu">
+                <h3>Select Language</h3>
+                <button onclick="setLang('te-IN')">తెలుగు</button>
+                <button onclick="setLang('hi-IN')">हिंदी</button>
+                <button onclick="setLang('kn-IN')">ಕನ್ನಡ</button>
+                <button onclick="setLang('ta-IN')">தமிழ்</button>
+                <button onclick="setLang('ml-IN')">മലയാളം</button>
+                <button onclick="setLang('en-US')">English</button>
+            </div>
+
+            <!-- MAP -->
+            <div id="map">
+                <!-- COMPASS OVERLAY -->
+                <div id="compassBox" class="compassBox">
+                    <div class="compassN">N</div>
+                    <div class="compassE">E</div>
+                    <div class="compassS">S</div>
+                    <div class="compassW">W</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

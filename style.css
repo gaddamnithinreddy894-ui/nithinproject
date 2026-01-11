@@ -1,0 +1,312 @@
+
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 8px 15px;
+    background: #12a347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 10px;
+}
+/* ===== DARK MODE FIX ===== */
+
+body.dark {
+    background: #121212 !important;
+    color: white !important;
+}
+
+body.dark .container {
+    background: #1e1e1e !important;
+}
+
+body.dark button {
+    background: #333 !important;
+    color: white !important;
+}
+
+body.dark input {
+    background: #222 !important;
+    color: white !important;
+}
+
+
+body.dark button {
+    background: #444;
+    color: #fff;
+}
+
+body.dark button:hover {
+    background: #666;
+}
+#datetime {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+body.dark #datetime {
+    color: #040404;
+}
+/* Weather based backgrounds */
+.sunny {
+    background: linear-gradient(to right, #fceabb, #f8b500);
+}
+
+.cloudy {
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+}
+
+.rainy {
+    background: linear-gradient(to right, #4b79a1, #283e51);
+}
+
+.misty {
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+#map {
+    width: 75%;
+    height: 300px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+#city
+{
+    width: 20rem;   
+}
+.getw{
+    background-color: black;
+}
+/* Layout container */
+.layout {
+    display: flex;
+    gap: 20px;
+}
+
+/* Left & Right sections */
+.left {
+    flex: 1;
+}
+
+.right {
+    flex: 1;
+}
+.right h4{
+    color: rgb(189, 112, 17);
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Map styling */
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    #map {
+        height: 250px;
+    }
+}
+.distance-box {
+    margin-top: 15px;
+}
+
+.distance-box input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.distance-box button {
+    padding: 8px 12px;
+}
+.compass {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.compassBox {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background: rgb(225, 220, 220);
+    z-index: 9999;
+}
+
+.compassBox div {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.compassN { top: 5px; left: 30px; }
+.compassS { bottom: 5px; left: 30px; }
+.compassE { right: 5px; top: 30px; }
+.compassW { left: 5px; top: 30px; }
+#map {
+    width: 100%;
+    height: 400px;
+    position: relative;  /* Important */
+}
+
+.compass {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background: rgb(236, 230, 230);
+    border-radius: 50%;
+    border: 2px solid rgb(118, 34, 192);
+    font-size: 20px;
+    text-emphasis-color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+}
+#settingsBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+
+.language-menu {
+    position: fixed;      /* FIXED so it stays on top */
+    top: 80px;
+    right: 20px;
+    width: 260px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+    display: none;
+
+    max-height: 350px;     /* scrolling area height */
+    overflow-y: auto;      /* scroll enable */
+    z-index: 20000;        /* highest but under settings */
+}
+
+
+
+
+.settings-menu button,
+.language-menu button {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0;
+    background: #1fa83d;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+}
+
+.language-menu button:hover {
+    background: #0d7d2f;
+}
+.language-menu button {
+    width: 50%;
+    padding: 12px;
+    margin: 6px 0;
+    background: #1fa83d;
+    color: white;
+    border-radius: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.language-menu button:hover {
+    background: #0d7d2f;
+}
+
+.language-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.language-menu::-webkit-scrollbar-thumb {
+    background: #2ca34b;
+    border-radius: 5px;
+}
+
+.language-menu::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+.settings-menu {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 15000;
+    display: none;
+}
+
+.language-menu {
+    position: absolute;
+    z-index: 99999 !important;  /* ALWAYS ON TOP */
+}
+
+
+
+
+
+
+
+
+
+
+
